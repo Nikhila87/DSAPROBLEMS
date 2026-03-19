@@ -1,0 +1,35 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine ("Try programiz.pro");
+        HelloWorld hw=new HelloWorld();
+        int[]arr={1, 2, 3, 4, 5};
+        int k=3;
+        hw.revarray(arr,0,arr.Length-1);
+        hw.revarray(arr,0,k-1);
+        hw.revarray(arr,k,arr.Length-1);
+     for(int i=0;i<arr.Length;i++)
+     {
+         Console.WriteLine(arr[i]);
+     }
+    }
+    public void revarray(int[]arr,int start,int end)
+    {
+      while(start<end)
+      {
+          int temp=arr[start];
+          arr[start]=arr[end];
+          arr[end]=temp;
+          start++;
+          end--;
+      }
+
+  
+}
+}
