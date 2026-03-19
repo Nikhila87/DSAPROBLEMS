@@ -1,0 +1,43 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine ("Try programiz.pro");
+        int[]arr={2, 5, 8, 12, 16, 23,28, 38,67};
+        HelloWorld hw=new HelloWorld();
+       int index=hw.search(arr,38);
+       Console.WriteLine("key is at index"+index);
+    }
+    public int search(int[]arr,int key)
+    {
+        int n=arr.Length-1;
+        int low=0,high=n;
+        
+        while(low<=high)
+        {
+         int mid=(high+low)/2;
+            if(arr[mid]==key)
+            {
+                return mid;
+              
+            }
+        
+             else if(key<arr[mid])
+                {
+             high=mid-1;
+    
+             }
+         else
+        {
+         low=mid;
+     }
+     
+}
+return -1;
+}
+}
