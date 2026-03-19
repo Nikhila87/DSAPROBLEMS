@@ -1,0 +1,35 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+using System.Collections.Generic;
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine ("Try programiz.pro");
+    
+        int[] arr={1, 2, 3, 4,7};
+        HelloWorld hw=new HelloWorld();
+        bool res=hw.checkdups(arr);
+        Console.WriteLine(res);
+    }
+    bool checkdups(int[] arr)
+    {
+    
+          HashSet<int> hs=new HashSet<int>();
+          for(int i=0;i<arr.Length;i++)
+          {
+              if(!hs.Contains(arr[i]))
+              {
+                  hs.Add(arr[i]);
+              }
+              else
+              {
+                  return true;
+              }
+              
+          }
+          return false;
+}
+}
