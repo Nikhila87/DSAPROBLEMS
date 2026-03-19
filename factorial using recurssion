@@ -1,0 +1,27 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+//factorial of number
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine ("Try programiz.pro");
+        HelloWorld hw=new HelloWorld();
+        int n=int.Parse(Console.ReadLine());
+        int fact=hw.factorial(n);
+        Console.WriteLine("factorial"+fact);
+    }
+    
+
+int factorial(int num)
+{
+    if(num==0)
+    return 0;
+    if(num==1)
+    return 1;
+    else
+    return num*factorial(num-1);
+}
+}
