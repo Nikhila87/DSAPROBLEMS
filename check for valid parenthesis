@@ -1,0 +1,40 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+using System.Collections.Generic;
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine ("Try programiz.pro");
+        HelloWorld hw=new HelloWorld();
+        string s="{[[]}";
+        bool res=hw.validparenthesis(s);
+        Console.WriteLine(res);
+    }
+    
+    bool validparenthesis(string s)
+    {
+        Stack<char>st=new Stack<char>();
+        for(int i=0;i<s.Length;i++)
+        {
+            if(s[i]=='[' |s[i]=='(' |s[i]=='{')
+            {
+                st.Push(s[i]);
+            }
+      if(s[i]==']' |s[i]==')' |s[i]=='}')
+      {
+        
+          char str=st.Pop();
+        //   Console.WriteLine("string is"+str);
+         if((s[i]==')' && str!='(')|(s[i]==']' && str!='[')|(s[i]=='}'&&str!='{'))
+          return false;
+      }
+           
+        }
+       
+           
+         return st.Count==0;
+    }
+}
