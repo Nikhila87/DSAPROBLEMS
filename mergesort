@@ -1,0 +1,73 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine ("Try programiz.pro");
+        int[] arr={100,12,8,1,44,39};
+        int n=arr.Length;
+        HelloWorld hw=new HelloWorld();
+        hw.mergesort(arr,0,n-1);
+        Console.WriteLine("Array after Sorting\n");
+for(int i=0;i<n;i++)
+{
+    Console.WriteLine(arr[i]+" ");
+}
+    }
+    void mergesort(int[] arr,int left,int right)
+    {
+        if(left<right)
+        {
+            int mid=(left+right)/2;
+            mergesort(arr,left,mid);
+            mergesort(arr,mid+1,right);
+            merge(arr,left,mid,right);
+        }
+        void merge(int[] arr,int left,int mid,int right)
+        {
+            int larr=mid-left+1;
+            int rarr=right-mid;
+            int[] L=new int[larr];
+            int[] R=new int[rarr];
+            for(int m=0;m<larr;m++)
+             L[m]=arr[left+m];
+            for(int n=0;n<rarr;n++)
+            R[n]=arr[mid+1+n];
+            int i=0,j=0,k=left;
+            while(i<larr && j<rarr)
+            {
+                
+                if(L[i]<=R[j])
+                {
+                    arr[k]=L[i];
+                    i++;
+                    k++;
+                }
+                else
+                {
+                    arr[k]=R[j];
+                    j++;
+                    k++;
+                }
+                
+            }
+            while(i<larr)
+            {
+                arr[k]=L[i];
+                i++;
+                k++;
+            }
+            while(j<rarr)
+            {
+                arr[k]=R[j];
+                j++;
+                k++;
+            }
+        }
+        
+    }
+}
