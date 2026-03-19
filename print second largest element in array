@@ -1,0 +1,33 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine ("Try programiz.pro");
+        int[]arr={25, 15, 20, 8, 19, 24 };
+        int n=arr.Length-1;
+       int first=arr[0];
+       int second=0;
+        for(int i=1;i<=n;i++)
+        {
+      if(arr[i]>first)
+      {
+          second=first;
+          first=arr[i];
+
+      }
+  else if(arr[i]>second && arr[i]!=first)
+   {
+       second=arr[i];
+       continue;
+   }
+    
+        }
+        Console.WriteLine("first largest----"+first);
+        Console.WriteLine("second largest----"+second);
+    }
+}
