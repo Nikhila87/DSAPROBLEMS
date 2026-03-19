@@ -1,0 +1,36 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+using System.Collections.Generic;
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine ("Try programiz.pro");
+        int[] arr={3,7,5,1,4};
+        HelloWorld hw=new HelloWorld();
+        hw.targetsum(arr,8);
+    }
+    void targetsum(int[] arr,int target)
+    {
+        Dictionary<int,int>dt=new Dictionary<int,int>();
+        int n=arr.Length;
+        for(int i=0;i<n;i++)
+        {
+        int val=target-arr[i];
+        Console.WriteLine("value"+val);
+        if(!dt.ContainsKey(val))
+        {
+          
+            dt.Add(arr[i],i);
+            Console.WriteLine("Key is" +dt[arr[i]]);
+        }
+        else
+        {
+           
+            Console.WriteLine("key value is "+i+","+dt[val]);
+        }
+        }
+    }
+}
