@@ -1,0 +1,32 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine ("Try programiz.pro");
+        int[]arr={1,4,3,1,2};
+        int res=0;
+   //set both pointers to start
+   int slow=arr[0];
+   int fast=arr[0];
+   
+   //run the loop til slow=fast
+   do
+   {
+       slow=arr[slow];
+       fast=arr[arr[fast]];
+   }while(slow!=fast);
+   //now reset fast to first index and run while loop at same speed
+   fast=arr[0];
+   while(slow!=fast)
+   {
+       slow=arr[slow];
+       fast=arr[fast];
+   }
+   Console.WriteLine(slow);
+    }
+}
