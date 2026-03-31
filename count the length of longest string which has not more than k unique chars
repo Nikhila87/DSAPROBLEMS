@@ -1,0 +1,60 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+using System.Collections.Generic;
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine ("Try programiz.pro");
+        string s="ecebaa";
+        int k=2;
+        HelloWorld hw=new HelloWorld();
+    int res=hw.longeststring(s,k);
+        Console.WriteLine(res);
+    }
+    
+ int longeststring(string s,int k)
+{
+    Dictionary<char,int>dt=new Dictionary<char,int>();
+    //assign left n right to first char
+    int left=0;
+    int maxlen=0;
+    int startindex=0;
+    for(int right=0;right<s.Length;right++)
+    {
+        //move right value and set the count of each char
+        if(!dt.ContainsKey(s[right]))
+       dt[s[right]]=0;
+       dt[s[right]]++;
+       
+       
+       //check for unique characters it must not be greater than k
+       while(dt.Count>k)
+       {
+           //decrement count of each char from left move left(increment left) pointer
+           dt[s[left]]--;
+            //check if char count is 0 if 0 remove from dictionary
+            if(dt[s[left]]==0)
+             
+           dt.Remove(s[left]);
+           left++;
+         
+          
+       }
+       //return substring
+       if(right-left+1>maxlen)
+       {
+           maxlen=right-left+1;
+           startindex=left;
+          
+       }
+       
+       //return maxlen
+       maxlen=Math.Max(maxlen,right-left+1);
+    }
+     Console.WriteLine(s.Substring(startindex,maxlen));
+    return maxlen;
+}
+    }
