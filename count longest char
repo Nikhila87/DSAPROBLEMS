@@ -1,0 +1,40 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+using System.Collections.Generic;
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine ("Try programiz.pro");
+        string s="pwwkew";
+    HelloWorld hw=new HelloWorld();
+    int res=hw.longeststr(s);
+    Console.WriteLine(res);
+    }
+int longeststr(string s)
+    {
+        Dictionary<char,int>dt=new Dictionary<char,int>();
+        int left=0;
+        int maxlen=0;
+        for(int right=0;right<s.Length;right++)
+        {
+            if(!dt.ContainsKey(s[right]))
+                dt[s[right]]=0;
+                dt[s[right]]++;
+                
+            while(dt[s[right]]>1)
+            {
+            dt[s[left]]--;
+            left++;
+            }
+        
+            maxlen=Math.Max(maxlen,right-left+1);
+          
+        }
+       
+        return maxlen;
+        
+    }
+}
