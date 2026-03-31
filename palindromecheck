@@ -1,0 +1,45 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine ("Try programiz.pro");
+        string s="abceeba";
+        HelloWorld hw=new HelloWorld();
+        bool res=hw.checkpalindrome(s);
+        Console.WriteLine(res);
+    }
+        bool checkpalindrome(string s)
+        {
+        int left=0;
+        int right=s.Length-1;
+        int charcnt=1;
+        while(left<right)
+        {
+            
+         if(s[left]!=s[right])
+           return IsPalindrome(s,left+1,right)|IsPalindrome(s,left,right-1);
+            
+            left++;
+            right--;
+        }
+        return true;
+        }
+    bool IsPalindrome(string s,int l,int r)
+    {
+        while(l<r)
+        {
+            if(s[l]!=s[r])
+            return false;
+            l++;
+            r--;
+        }
+        return true;
+        
+    }
+}
+    
