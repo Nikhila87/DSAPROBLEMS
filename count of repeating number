@@ -1,0 +1,37 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine ("Try programiz.pro");
+        int[] arr={1, 4, 4};
+        int left=0;
+       
+        int target=4;
+        int minlen=int.MaxValue;
+        int currsum=0;
+      for(int right=0;right<arr.Length;right++)
+      {
+          currsum=currsum+arr[right];
+          while(currsum>=target)
+          {
+               minlen=Math.Min(minlen,right-left+1);
+               currsum=currsum-arr[left];
+              left++;
+          }
+         
+      }
+      Console.WriteLine(minlen);
+            
+           
+           
+                
+        
+  
+        
+    }
+}
